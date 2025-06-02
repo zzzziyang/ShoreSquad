@@ -3,9 +3,6 @@ const mapContainer = document.getElementById('map-container');
 const weatherContainer = document.getElementById('weather-container');
 const ctaButton = document.querySelector('.cta-button');
 
-// API Keys (in production, these should be secured)
-const OPENWEATHER_API_KEY = 'bf77f308c184fa91abf53b87fe832fa4'; // Replace with your OpenWeatherMap API key
-
 // Map variables
 let map;
 let markers = [];
@@ -77,7 +74,7 @@ async function fetchWeather() {
     try {
         // Example: Get weather for Singapore
         const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=Singapore&appid=${OPENWEATHER_API_KEY}&units=metric`
+            `https://api.openweathermap.org/data/2.5/weather?q=Singapore&appid=${CONFIG.OPENWEATHER_API_KEY}&units=metric`
         );
         
         if (!response.ok) throw new Error('Weather data not available');
